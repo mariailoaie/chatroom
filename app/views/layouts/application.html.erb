@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chatroom</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <div class="container">
+      <div class="content">
+        <h1 class="text-center">Chat Room</h1>
+        <div class="row">
+          <div class="col-md-8">
+            <% if notice %>
+                <div class="notice"><%= notice %></div>
+            <% elsif alert %>
+                <div class="alert"><%= alert %></div>
+            <% end %>
+            <%= yield %>
+          </div>
+          <%= render 'public/user_list'%>
+        </div>
+      </div><!--/row-->
+    </div><!--/content-->
+    </div> <!-- /container -->
+</html>
